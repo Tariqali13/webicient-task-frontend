@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.icon-btn {
+  width: 2rem !important;
+  height: 2rem !important;
+}
+.Toastify__toast--error {
+  align-items: start !important;
+}
+
+.react-datepicker-popper {
+  z-index: 9999 !important;
+}
