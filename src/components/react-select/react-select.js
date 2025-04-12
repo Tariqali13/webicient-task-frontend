@@ -31,6 +31,7 @@ const ReactSelect = (props) => {
   const handleFocus = (e) => {
     e.target.setAttribute('autocomplete', 'off');
   };
+  const isWindow = typeof window !== 'undefined';
   return (
     <React.Fragment>
       <Select
@@ -65,7 +66,7 @@ const ReactSelect = (props) => {
         placeholder={placeholder}
         inputProps={{ autoComplete: 'off', autoFill: 'off' }}
         className={`react-msd rt-themeselectdropdown ${classes}`}
-        menuPortalTarget={document.body} // portal the dropdown out of the table
+        menuPortalTarget={isWindow ? document.body : ''} // portal the dropdown out of the table
         styles={{
           ...creatableSelectStyles,
           menuPortal: (base) => ({ ...base, zIndex: 9999 }), // ensure it's on top
